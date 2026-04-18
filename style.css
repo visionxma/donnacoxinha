@@ -652,13 +652,14 @@ body::after {
     transition: transform .25s ease;
 }
 .socials a .wa-icon path { fill: var(--brown-dark); }
-.socials a .wa-outline { stroke: var(--brown-dark); fill: none; }
+.socials a .wa-solid .wa-bubble { fill: var(--brown-dark); }
+.socials a .wa-solid .wa-phone  { fill: #fff; }
 .socials a:hover {
     transform: translateY(-3px) scale(1.1);
     color: var(--brown);
 }
 .socials a:hover .wa-icon path { fill: var(--brown); }
-.socials a:hover .wa-outline { stroke: var(--brown); }
+.socials a:hover .wa-solid .wa-bubble { fill: var(--brown); }
 .socials a:hover svg { transform: none; }
 
 .copy, .made {
