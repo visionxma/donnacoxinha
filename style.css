@@ -671,6 +671,13 @@ body::after {
     color: rgba(255,255,255,.9);
     margin-top: 4px;
 }
+.made {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
 .heart {
     color: var(--y-gold);
     animation: beat 1.2s ease-in-out infinite;
@@ -680,24 +687,17 @@ body::after {
 .credit {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 4px;
-    margin-left: 4px;
-    border-radius: 999px;
+    padding: 0;
+    margin: 0;
     background: transparent;
     border: none;
     color: var(--white);
     text-decoration: none;
     transition: transform .25s ease, filter .25s ease;
-}
-.credit svg {
-    width: 14px;
-    height: 14px;
-    fill: #25d366;
-    transition: transform .25s ease;
+    line-height: 0;
 }
 .credit-brand {
-    height: 22px;
+    height: 18px;
     width: auto;
     display: block;
     filter: drop-shadow(0 2px 4px rgba(42, 15, 10, .35));
@@ -708,9 +708,8 @@ body::after {
 }
 .credit:hover .credit-brand {
     filter: drop-shadow(0 4px 10px rgba(42, 15, 10, .5));
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
-.credit:hover svg { transform: scale(1.15); }
 @keyframes beat {
     0%, 100% { transform: scale(1); }
     50%      { transform: scale(1.25); }
