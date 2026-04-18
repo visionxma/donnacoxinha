@@ -15,15 +15,6 @@ if (scrollHint) {
     setTimeout(() => scrollHint.classList.add('hide'), 8000);
 }
 
-// Fecha o tooltip do CTA
-const ctaTooltip = document.getElementById('cta-tooltip');
-const ctaTooltipClose = document.getElementById('cta-tooltip-close');
-if (ctaTooltip && ctaTooltipClose) {
-    ctaTooltipClose.addEventListener('click', () => {
-        ctaTooltip.style.animation = 'tooltip-out .25s ease forwards';
-        setTimeout(() => ctaTooltip.remove(), 260);
-    });
-}
 
 // Bloqueia zoom em iOS Safari (ignora user-scalable=no da viewport)
 ['gesturestart', 'gesturechange', 'gestureend'].forEach(evt => {
