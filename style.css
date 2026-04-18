@@ -490,6 +490,77 @@ body::after {
 }
 .featured-link:hover .arrow { transform: translateX(4px); }
 
+/* ===== Dica de rolagem ===== */
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: -4px auto 2px;
+    color: var(--white);
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(42, 15, 10, .4);
+    transition: opacity .45s ease, transform .45s ease;
+    pointer-events: none;
+}
+.scroll-hint.hide {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+.scroll-hint-text {
+    animation: hint-fade 2s ease-in-out infinite;
+}
+.scroll-hint-mouse {
+    display: flex;
+    animation: hint-bob 1.8s ease-in-out infinite;
+}
+.scroll-hint-mouse svg {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 2px 4px rgba(42, 15, 10, .4));
+}
+.scroll-hint-mouse svg path {
+    stroke-dasharray: 2 2;
+    animation: wheel 1.4s ease-in-out infinite;
+}
+.scroll-hint-chevrons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -6px;
+    margin-top: -2px;
+}
+.scroll-hint-chevrons .chev {
+    width: 16px;
+    height: 16px;
+    color: var(--white);
+    filter: drop-shadow(0 2px 3px rgba(42, 15, 10, .35));
+    animation: chev-bounce 1.6s ease-in-out infinite;
+}
+.scroll-hint-chevrons .chev-1 { animation-delay: 0s; opacity: .75; }
+.scroll-hint-chevrons .chev-2 { animation-delay: .2s; opacity: 1; margin-top: -10px; }
+
+@keyframes hint-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(4px); }
+}
+@keyframes hint-fade {
+    0%, 100% { opacity: .75; }
+    50%      { opacity: 1; }
+}
+@keyframes wheel {
+    0%   { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -8; }
+}
+@keyframes chev-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
+}
+
 /* ===== Links / Cards ===== */
 .links {
     display: flex;

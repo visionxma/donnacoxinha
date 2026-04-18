@@ -321,7 +321,7 @@
         <!-- Cabeçalho / Perfil -->
         <header class="profile">
             <div class="cover" aria-hidden="true">
-                <img src="Assets/IMG_7538.JPG.jpeg" alt="" loading="eager" fetchpriority="high" />
+                <img src="Assets/capa.webp" alt="" loading="eager" fetchpriority="high" />
             </div>
             <div class="avatar-wrapper">
                 <div class="avatar-ring">
@@ -415,6 +415,28 @@
                 <path d="M9 6l6 6-6 6" />
             </svg>
         </button>
+
+        <!-- Dica de rolagem -->
+        <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint-text">role para ver mais</span>
+            <span class="scroll-hint-mouse">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 3a4 4 0 0 0-4 4v10a4 4 0 1 0 8 0V7a4 4 0 0 0-4-4zm0 4v3" />
+                </svg>
+            </span>
+            <span class="scroll-hint-chevrons">
+                <svg viewBox="0 0 24 24" class="chev chev-1" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                </svg>
+                <svg viewBox="0 0 24 24" class="chev chev-2" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                </svg>
+            </span>
+        </div>
 
         <!-- Lista de links estilo linktree -->
         <nav class="links" aria-label="Links rápidos">
