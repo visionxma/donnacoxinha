@@ -1,0 +1,51 @@
+{
+    "name": "Donna Coxinha®",
+    "short_name": "Donna Coxinha",
+    "description": "Salgados que você nunca esquece! Coxinhas, cones, combos e kits festa em 4 lojas do Maranhão.",
+    "lang": "pt-BR",
+    "dir": "ltr",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#F07A00",
+    "theme_color": "#F07A00",
+    "categories": ["food", "business", "shopping"],
+    "icons": [
+        {
+            "src": "Assets/logocoxa.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "Assets/logocoxa.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "Assets/IMG_7511.JPG.jpeg",
+            "sizes": "1500x1000",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Cone de coxinhas Donna Coxinha"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Cardápio",
+            "short_name": "Menu",
+            "description": "Ver o cardápio completo",
+            "url": "/?menu"
+        },
+        {
+            "name": "Delivery",
+            "short_name": "Pedir",
+            "description": "Fazer pedido pelo Anota aí®",
+            "url": "https://pedido.anota.ai/loja/donna-coxinha-9?f=msa"
+        }
+    ]
+}

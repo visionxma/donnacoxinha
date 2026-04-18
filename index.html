@@ -5,18 +5,230 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#F07A00" />
-    <meta name="description"
-        content="Donna Coxinha® — Fast food e festas! Peça seu salgadinho, descubra o cardápio e encontre nossas lojas." />
-    <meta property="og:title" content="Donna Coxinha® — Salgados que você nunca esquece" />
-    <meta property="og:description" content="Cardápio, delivery, WhatsApp e unidades — tudo em um só lugar." />
-    <meta property="og:type" content="website" />
-    <title>Donna Coxinha® | Fast food e festas</title>
+    <meta name="color-scheme" content="light" />
 
+    <!-- Primary SEO -->
+    <title>Donna Coxinha® | Coxinhas, Combos e Delivery em Pedreiras, Lago da Pedra, Paulo Ramos e Igarapé Grande - MA</title>
+    <meta name="title"
+        content="Donna Coxinha® | Coxinhas, Combos e Delivery em Pedreiras, Lago da Pedra, Paulo Ramos e Igarapé Grande - MA" />
+    <meta name="description"
+        content="Donna Coxinha® — Salgados que você nunca esquece! Peça coxinhas, cones, combos e kits festa no delivery (Anota aí®) ou WhatsApp. 4 unidades no Maranhão: Pedreiras, Lago da Pedra, Paulo Ramos e Igarapé Grande." />
+    <meta name="keywords"
+        content="donna coxinha, coxinha, coxinhas, salgados, fast food, festas, delivery, pedreiras, lago da pedra, paulo ramos, igarape grande, maranhão, anota ai, cardápio, combo, cones de coxinha, caixinha festa, atacado salgados" />
+    <meta name="author" content="Donna Coxinha®" />
+    <meta name="publisher" content="Donna Coxinha®" />
+    <meta name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://donnacoxinha.com/" />
+
+    <!-- Local SEO (geo) -->
+    <meta name="geo.region" content="BR-MA" />
+    <meta name="geo.placename" content="Pedreiras, Lago da Pedra, Paulo Ramos, Igarapé Grande" />
+    <meta name="geo.position" content="-4.5700;-44.5900" />
+    <meta name="ICBM" content="-4.5700, -44.5900" />
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn preview -->
+    <meta property="og:type" content="restaurant.restaurant" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Donna Coxinha®" />
+    <meta property="og:url" content="https://donnacoxinha.com/" />
+    <meta property="og:title"
+        content="Donna Coxinha® — Salgados que você nunca esquece" />
+    <meta property="og:description"
+        content="Cardápio, delivery, WhatsApp e unidades — tudo em um só lugar. 4 lojas no Maranhão." />
+    <meta property="og:image" content="https://donnacoxinha.com/Assets/IMG_7511.JPG.jpeg" />
+    <meta property="og:image:secure_url" content="https://donnacoxinha.com/Assets/IMG_7511.JPG.jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1500" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="Cone de coxinhas Donna Coxinha sendo segurado" />
+    <meta property="restaurant:contact_info:country_name" content="Brazil" />
+    <meta property="restaurant:contact_info:region" content="Maranhão" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Donna Coxinha® — Salgados que você nunca esquece" />
+    <meta name="twitter:description"
+        content="Cardápio, delivery, WhatsApp e unidades. Fast food e festas no Maranhão." />
+    <meta name="twitter:image" content="https://donnacoxinha.com/Assets/IMG_7511.JPG.jpeg" />
+    <meta name="twitter:image:alt" content="Cone de coxinhas Donna Coxinha" />
+
+    <!-- Favicons & PWA -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/logocoxa.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="Assets/logocoxa.png" />
+    <link rel="apple-touch-icon" href="Assets/logocoxa.png" />
+    <link rel="mask-icon" href="Assets/logocoxa.png" color="#F07A00" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="application-name" content="Donna Coxinha®" />
+    <meta name="apple-mobile-web-app-title" content="Donna Coxinha" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#F07A00" />
+    <meta name="msapplication-TileImage" content="Assets/logocoxa.png" />
+
+    <!-- Performance: preconnect + preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://pedido.anota.ai" />
+    <link rel="dns-prefetch" href="https://maps.app.goo.gl" />
+    <link rel="preload" as="image" href="Assets/logocoxa.png" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured Data: Organization + WebSite + 4 Restaurants (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://donnacoxinha.com/#organization",
+          "name": "Donna Coxinha",
+          "alternateName": "Donna Coxinha®",
+          "url": "https://donnacoxinha.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://donnacoxinha.com/Assets/logocoxa.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://donnacoxinha.com/Assets/IMG_7511.JPG.jpeg",
+          "description": "Rede de fast food especializada em coxinhas, cones, combos e salgados para festas no Maranhão.",
+          "slogan": "Salgados que você nunca esquece",
+          "foundingLocation": "Pedreiras, MA, Brasil",
+          "areaServed": [
+            {"@type":"City","name":"Pedreiras","containedInPlace":"Maranhão, Brasil"},
+            {"@type":"City","name":"Lago da Pedra","containedInPlace":"Maranhão, Brasil"},
+            {"@type":"City","name":"Paulo Ramos","containedInPlace":"Maranhão, Brasil"},
+            {"@type":"City","name":"Igarapé Grande","containedInPlace":"Maranhão, Brasil"}
+          ],
+          "sameAs": [
+            "https://www.instagram.com/donnacoxinha_oficial/"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+55-99-98148-3145",
+              "contactType": "customer service",
+              "areaServed": "BR",
+              "availableLanguage": "Portuguese"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+55-99-99205-2004",
+              "contactType": "sales",
+              "description": "Atacado, revenda e eventos",
+              "areaServed": "BR",
+              "availableLanguage": "Portuguese"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://donnacoxinha.com/#website",
+          "url": "https://donnacoxinha.com/",
+          "name": "Donna Coxinha®",
+          "inLanguage": "pt-BR",
+          "publisher": {"@id": "https://donnacoxinha.com/#organization"}
+        },
+        {
+          "@type": "Restaurant",
+          "@id": "https://donnacoxinha.com/#pedreiras",
+          "name": "Donna Coxinha Pedreiras",
+          "parentOrganization": {"@id": "https://donnacoxinha.com/#organization"},
+          "url": "https://donnacoxinha.com/",
+          "image": "https://donnacoxinha.com/Assets/IMG_7493.JPG.jpeg",
+          "telephone": "+5599981483145",
+          "priceRange": "$",
+          "servesCuisine": ["Brasileira", "Salgados", "Fast Food"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pedreiras",
+            "addressRegion": "MA",
+            "addressCountry": "BR"
+          },
+          "hasMenu": "https://donnacoxinha.com/Assets/cardapio/cardapio-01.jpg",
+          "acceptsReservations": "False",
+          "potentialAction": {
+            "@type": "OrderAction",
+            "target": "https://pedido.anota.ai/loja/donna-coxinha-9?f=msa",
+            "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
+          }
+        },
+        {
+          "@type": "Restaurant",
+          "@id": "https://donnacoxinha.com/#lago-da-pedra",
+          "name": "Donna Coxinha Lago da Pedra",
+          "parentOrganization": {"@id": "https://donnacoxinha.com/#organization"},
+          "url": "https://donnacoxinha.com/",
+          "image": "https://donnacoxinha.com/Assets/IMG_7504.JPG.jpeg",
+          "telephone": "+5599985050330",
+          "priceRange": "$",
+          "servesCuisine": ["Brasileira", "Salgados", "Fast Food"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lago da Pedra",
+            "addressRegion": "MA",
+            "addressCountry": "BR"
+          },
+          "hasMenu": "https://donnacoxinha.com/Assets/cardapio/cardapio-01.jpg"
+        },
+        {
+          "@type": "Restaurant",
+          "@id": "https://donnacoxinha.com/#paulo-ramos",
+          "name": "Donna Coxinha Paulo Ramos",
+          "parentOrganization": {"@id": "https://donnacoxinha.com/#organization"},
+          "url": "https://donnacoxinha.com/",
+          "image": "https://donnacoxinha.com/Assets/IMG_7511.JPG.jpeg",
+          "telephone": "+5598970126676",
+          "priceRange": "$",
+          "servesCuisine": ["Brasileira", "Salgados", "Fast Food"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Sete de Setembro, 38",
+            "addressLocality": "Paulo Ramos",
+            "addressRegion": "MA",
+            "postalCode": "65716-000",
+            "addressCountry": "BR"
+          },
+          "hasMap": "https://maps.google.com/?q=Donna+coxinha+Paulo+Ramos+R.+Sete+de+Setembro,+38,+Paulo+Ramos+-+MA,+65716-000",
+          "hasMenu": "https://donnacoxinha.com/Assets/cardapio/cardapio-01.jpg"
+        },
+        {
+          "@type": "Restaurant",
+          "@id": "https://donnacoxinha.com/#igarape-grande",
+          "name": "Donna Coxinha Igarapé Grande",
+          "parentOrganization": {"@id": "https://donnacoxinha.com/#organization"},
+          "url": "https://donnacoxinha.com/",
+          "image": "https://donnacoxinha.com/Assets/IMG_7527.JPG.jpeg",
+          "priceRange": "$",
+          "servesCuisine": ["Brasileira", "Salgados", "Fast Food"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Igarapé Grande",
+            "addressRegion": "MA",
+            "addressCountry": "BR"
+          },
+          "hasMap": "https://maps.app.goo.gl/Yo9b8r6pTDWLZJ8v6",
+          "hasMenu": "https://donnacoxinha.com/Assets/cardapio/cardapio-01.jpg"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Início","item":"https://donnacoxinha.com/"},
+            {"@type":"ListItem","position":2,"name":"Cardápio","item":"https://donnacoxinha.com/Assets/cardapio/cardapio-01.jpg"},
+            {"@type":"ListItem","position":3,"name":"Delivery","item":"https://pedido.anota.ai/loja/donna-coxinha-9?f=msa"}
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -104,7 +316,7 @@
                 </figure>
 
                 <!-- clones para loop -->
-                <figure class="gallery-item" aria-hidden="true"><img src="Assets/IMG_7511.JPG.jpeg" alt="" /></figure>
+                <figure class="gallery-item" aria-hidden="true"><img src="Assets/IMG_7511.JPG.jpeg" alt="" loading="lazy" /></figure>
                 <figure class="gallery-item" aria-hidden="true"><img src="Assets/IMG_7493.JPG.jpeg" alt="" /></figure>
                 <figure class="gallery-item" aria-hidden="true"><img src="Assets/IMG_7527.JPG.jpeg" alt="" /></figure>
                 <figure class="gallery-item" aria-hidden="true"><img src="Assets/IMG_7476.JPG.jpeg" alt="" /></figure>

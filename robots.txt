@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /.github/
+
+# Permitir explicitamente o cardápio e logo para crawlers de imagens
+Allow: /Assets/cardapio/
+Allow: /Assets/logocoxa.png
+
+Sitemap: https://donnacoxinha.com/sitemap.xml
+
+# Host canônico
+Host: https://donnacoxinha.com
