@@ -14,6 +14,111 @@ document.addEventListener('touchend', (e) => {
     lastTouchEnd = now;
 }, { passive: false });
 
+/* ============================================================
+   Botão flutuante de compartilhar
+   ============================================================ */
+const shareFab = document.getElementById('share-fab');
+const shareToggle = document.getElementById('share-toggle');
+const shareMenu = document.getElementById('share-menu');
+const toast = document.getElementById('toast');
+
+const SHARE_URL = 'https://donnacoxinha.com/';
+const SHARE_TEXT = 'Conheça a Donna Coxinha® — Salgados que você nunca esquece!';
+
+function openShare() {
+    shareFab.classList.add('open');
+    shareToggle.setAttribute('aria-expanded', 'true');
+    shareMenu.setAttribute('aria-hidden', 'false');
+}
+function closeShare() {
+    shareFab.classList.remove('open');
+    shareToggle.setAttribute('aria-expanded', 'false');
+    shareMenu.setAttribute('aria-hidden', 'true');
+}
+function toggleShare() {
+    shareFab.classList.contains('open') ? closeShare() : openShare();
+}
+
+shareToggle.addEventListener('click', toggleShare);
+
+// Fecha ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!shareFab.contains(e.target)) closeShare();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && shareFab.classList.contains('open')) closeShare();
+});
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove('show'), 2600);
+}
+
+async function copyLink() {
+    try {
+        await navigator.clipboard.writeText(SHARE_URL);
+        showToast('Link copiado ✓');
+    } catch {
+        // Fallback p/ navegadores antigos
+        const ta = document.createElement('textarea');
+        ta.value = SHARE_URL;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showToast('Link copiado ✓'); }
+        catch { showToast('Não foi possível copiar'); }
+        finally { document.body.removeChild(ta); }
+    }
+}
+
+function buildShareUrl(service) {
+    const u = encodeURIComponent(SHARE_URL);
+    const t = encodeURIComponent(SHARE_TEXT);
+    switch (service) {
+        case 'whatsapp': return `https://wa.me/?text=${t}%20${u}`;
+        case 'facebook': return `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+        case 'x':        return `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
+        case 'instagram':
+        case 'tiktok':
+        default: return null;
+    }
+}
+
+shareMenu.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-share]');
+    if (!btn) return;
+    const service = btn.dataset.share;
+
+    if (service === 'copy') {
+        await copyLink();
+        closeShare();
+        return;
+    }
+
+    const url = buildShareUrl(service);
+    if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        closeShare();
+        return;
+    }
+
+    // Instagram e TikTok: copia o link + abre o app/site
+    await copyLink();
+    const fallback = service === 'instagram'
+        ? 'https://www.instagram.com/donnacoxinha_oficial/'
+        : 'https://www.tiktok.com/';
+    showToast(
+        service === 'instagram'
+            ? 'Link copiado! Cole no Instagram 📸'
+            : 'Link copiado! Cole no TikTok 🎵'
+    );
+    setTimeout(() => window.open(fallback, '_blank', 'noopener,noreferrer'), 900);
+    closeShare();
+});
+
 // Efeito ripple ao clicar nos cards
 document.querySelectorAll('.link-card, .featured-link').forEach(card => {
     card.addEventListener('click', e => {
