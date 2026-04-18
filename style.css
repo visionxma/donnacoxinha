@@ -493,7 +493,7 @@ body::after {
 /* ===== Dica flutuante de rolagem ===== */
 .scroll-hint {
     position: fixed;
-    bottom: 18px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 30;
@@ -529,6 +529,133 @@ body::after {
 @keyframes hint-arrow {
     0%, 100% { transform: translateY(0); opacity: .9; }
     50%      { transform: translateY(3px); opacity: .5; }
+}
+
+/* ===== CTA flutuante estilo Linktree ===== */
+.bottom-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 60px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .35) 45%,
+        rgba(0, 0, 0, .75) 100%);
+    transition: opacity .35s ease, transform .35s ease;
+}
+.bottom-cta.hide {
+    opacity: 0;
+    transform: translateY(30px);
+    pointer-events: none;
+}
+
+.cta-tooltip {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 4px 4px 12px;
+    background: var(--white);
+    color: var(--brown-dark);
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    animation: tooltip-in .6s .2s both cubic-bezier(.2, .8, .2, 1);
+    position: relative;
+}
+.cta-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .08);
+}
+.cta-tooltip-close {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: var(--cream);
+    color: var(--brown-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.cta-tooltip-close svg { width: 12px; height: 12px; }
+.cta-tooltip-close:hover { background: var(--o-vivid); color: var(--white); transform: rotate(90deg); }
+
+.cta-button {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--o-vivid), var(--r-strong));
+    color: var(--white);
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: .3px;
+    text-decoration: none;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .25);
+    transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+    max-width: 100%;
+    animation: cta-in .7s cubic-bezier(.2, .8, .2, 1);
+}
+.cta-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .25));
+}
+.cta-button span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cta-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .5), 0 4px 10px rgba(0, 0, 0, .3);
+}
+.cta-button:active { transform: translateY(0) scale(.98); }
+
+@keyframes tooltip-in {
+    from { opacity: 0; transform: translateY(10px) scale(.9); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes tooltip-out {
+    to { opacity: 0; transform: translateY(-6px) scale(.85); }
+}
+@keyframes cta-in {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Evita que o último card fique escondido atrás do CTA */
+.container { padding-bottom: 130px; }
+
+@media (max-width: 420px) {
+    .cta-button { padding: 12px 22px; font-size: 13px; }
+    .bottom-cta { padding: 50px 12px 14px; }
+    .container { padding-bottom: 120px; }
 }
 
 /* ===== Links / Cards ===== */
