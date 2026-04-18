@@ -491,6 +491,25 @@ body::after {
 .featured-link:hover .arrow { transform: translateX(4px); }
 
 /* ===== Dica flutuante de rolagem ===== */
+.scroll-hint-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    z-index: 29;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .35) 55%,
+        rgba(0, 0, 0, .75) 100%);
+    transition: opacity .45s ease, transform .45s ease;
+}
+.scroll-hint-backdrop.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
 .scroll-hint {
     position: fixed;
     bottom: 18px;

@@ -3,16 +3,21 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Esconde a dica de "role para ver mais" após o primeiro scroll
 const scrollHint = document.getElementById('scroll-hint');
+const scrollHintBackdrop = document.getElementById('scroll-hint-backdrop');
 if (scrollHint) {
     const hideHint = () => {
         if (window.scrollY > 40) {
             scrollHint.classList.add('hide');
+            scrollHintBackdrop?.classList.add('hide');
             window.removeEventListener('scroll', hideHint);
         }
     };
     window.addEventListener('scroll', hideHint, { passive: true });
     // Esconde também depois de 8s mesmo sem scroll
-    setTimeout(() => scrollHint.classList.add('hide'), 8000);
+    setTimeout(() => {
+        scrollHint.classList.add('hide');
+        scrollHintBackdrop?.classList.add('hide');
+    }, 8000);
 }
 
 
