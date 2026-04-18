@@ -1,6 +1,19 @@
 // Ano dinâmico no rodapé
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Bloqueia zoom em iOS Safari (ignora user-scalable=no da viewport)
+['gesturestart', 'gesturechange', 'gestureend'].forEach(evt => {
+    document.addEventListener(evt, e => e.preventDefault(), { passive: false });
+});
+
+// Bloqueia double-tap para zoom em iOS
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd < 350) e.preventDefault();
+    lastTouchEnd = now;
+}, { passive: false });
+
 // Efeito ripple ao clicar nos cards
 document.querySelectorAll('.link-card, .featured-link').forEach(card => {
     card.addEventListener('click', e => {
