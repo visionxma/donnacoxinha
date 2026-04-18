@@ -491,14 +491,41 @@ body::after {
 .featured-link:hover .arrow { transform: translateX(4px); }
 
 /* ===== Dica de rolagem ===== */
+.scroll-hint-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: -4px auto -4px;
+    transition: opacity .45s ease, transform .45s ease;
+    pointer-events: none;
+}
+.scroll-hint-wrap.hide {
+    opacity: 0;
+    transform: translateY(-12px) scale(.95);
+}
+
+.scroll-hint-ghost {
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: .95;
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .22);
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(42, 15, 10, .12);
+    user-select: none;
+    animation: ghost-pulse 3s ease-in-out infinite;
+}
+
 .scroll-hint {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin: -8px auto -4px;
     padding: 8px 16px;
-    align-self: center;
     background: rgba(255, 255, 255, .95);
     color: var(--o-dark);
     font-family: var(--font);
@@ -508,18 +535,12 @@ body::after {
     text-transform: uppercase;
     border-radius: 999px;
     box-shadow: 0 6px 18px rgba(42, 15, 10, .25);
-    transition: opacity .45s ease, transform .45s ease;
-    pointer-events: none;
     animation: hint-bob 1.8s ease-in-out infinite;
 }
 .scroll-hint svg {
     width: 16px;
     height: 16px;
     animation: hint-arrow 1.4s ease-in-out infinite;
-}
-.scroll-hint.hide {
-    opacity: 0;
-    transform: translateY(-12px) scale(.9);
 }
 
 @keyframes hint-bob {
@@ -529,6 +550,14 @@ body::after {
 @keyframes hint-arrow {
     0%, 100% { transform: translateY(0); opacity: 1; }
     50%      { transform: translateY(4px); opacity: .6; }
+}
+@keyframes ghost-pulse {
+    0%, 100% { opacity: .55; }
+    50%      { opacity: 1; }
+}
+
+@media (max-width: 420px) {
+    .scroll-hint-ghost { font-size: 28px; }
 }
 
 /* ===== Links / Cards ===== */
