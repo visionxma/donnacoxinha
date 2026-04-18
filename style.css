@@ -653,7 +653,6 @@ body::after {
 }
 .socials a .wa-icon path { fill: var(--brown-dark); }
 .socials a .wa-solid .wa-bubble { fill: var(--brown-dark); }
-.socials a .wa-solid .wa-phone  { fill: #fff; }
 .socials a:hover {
     transform: translateY(-3px) scale(1.1);
     color: var(--brown);
