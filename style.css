@@ -676,51 +676,37 @@ body::after {
 .credit {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
+    gap: 8px;
+    padding: 4px 4px;
     margin-left: 4px;
     border-radius: 999px;
-    background: var(--brown-dark);
+    background: transparent;
     border: none;
     color: var(--white);
     text-decoration: none;
-    font-weight: 700;
-    letter-spacing: .3px;
-    box-shadow: 0 3px 10px rgba(42, 15, 10, .3);
-    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+    transition: transform .25s ease, filter .25s ease;
 }
 .credit svg {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
     fill: #25d366;
     transition: transform .25s ease;
 }
 .credit-brand {
-    background: linear-gradient(90deg, #fff 0%, var(--y-gold) 60%, #fff 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3.2s linear infinite;
+    height: 22px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(42, 15, 10, .35));
+    transition: filter .25s ease, transform .25s ease;
 }
 .credit:hover {
-    background: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(42, 15, 10, .25);
 }
 .credit:hover .credit-brand {
-    background: linear-gradient(90deg, var(--o-dark), var(--r-strong));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: none;
+    filter: drop-shadow(0 4px 10px rgba(42, 15, 10, .5));
+    transform: scale(1.04);
 }
 .credit:hover svg { transform: scale(1.15); }
-
-@keyframes shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
 @keyframes beat {
     0%, 100% { transform: scale(1); }
     50%      { transform: scale(1.25); }
