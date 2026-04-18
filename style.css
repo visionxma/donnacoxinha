@@ -1199,3 +1199,83 @@ body.modal-open { overflow: hidden; }
         transition-duration: .01ms !important;
     }
 }
+
+/* ===== Desktop: grid 2 colunas + conteúdo maior ===== */
+@media (min-width: 900px) {
+    .container {
+        max-width: 1080px;
+        padding: 60px 40px 80px;
+        gap: 28px;
+    }
+
+    /* Header com cover mais largo + avatar maior + nome grande */
+    .profile { max-width: 760px; margin: 0 auto; }
+    .cover { height: 220px; margin-bottom: -90px; border-radius: 28px; }
+    .avatar-wrapper { width: 190px; height: 190px; }
+    .avatar-ring { padding: 6px; }
+    .name { font-size: 44px; letter-spacing: .5px; }
+    .handle { font-size: 16px; }
+    .bio {
+        font-size: 17px;
+        max-width: 580px;
+        line-height: 1.55;
+        margin-top: 16px;
+    }
+    .quick-actions { gap: 14px; margin-top: 22px; }
+    .chip { padding: 10px 20px; font-size: 14px; }
+    .chip svg { width: 17px; height: 17px; }
+
+    /* Galeria com thumbs maiores */
+    .gallery-item { width: 220px; height: 150px; }
+
+    /* Destaque ganha largura máxima e texto maior */
+    .featured-link {
+        max-width: 760px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px 18px;
+        gap: 18px;
+    }
+    .featured-thumb { width: 92px; height: 92px; border-radius: 18px; }
+    .featured-label { font-size: 11px; letter-spacing: 2px; }
+    .featured-text strong { font-size: 22px; }
+    .featured-desc { font-size: 14px; margin-top: 2px; }
+    .arrow { width: 28px; height: 28px; }
+
+    /* Links em grid 2 colunas */
+    .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .link-card {
+        padding: 14px 16px;
+        gap: 16px;
+    }
+    .link-icon { width: 56px; height: 56px; border-radius: 14px; }
+    .link-icon svg { width: 28px; height: 28px; }
+    .link-title { font-size: 16px; }
+    .link-sub { font-size: 13px; }
+    .link-go { width: 32px; height: 32px; }
+    .link-go svg { width: 16px; height: 16px; }
+
+    /* Dual card: ajusta proporção na grade */
+    .link-card-dual .link-card-main { padding: 14px 16px; gap: 16px; }
+    .link-card-map { width: 72px; font-size: 11px; }
+    .link-card-map svg { width: 24px; height: 24px; }
+
+    /* Footer centralizado com mais respiro */
+    .footer { margin-top: 24px; }
+    .socials a svg { width: 34px; height: 34px; }
+    .copy, .made { font-size: 13px; }
+
+    /* Dica de scroll escondida em desktop (não precisa) */
+    .scroll-hint, .scroll-hint-backdrop { display: none; }
+}
+
+/* ===== Desktop largo (>= 1200px): pode respirar mais ===== */
+@media (min-width: 1200px) {
+    .container { max-width: 1160px; }
+    .name { font-size: 48px; }
+    .links { gap: 16px; }
+}
