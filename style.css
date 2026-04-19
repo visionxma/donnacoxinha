@@ -226,6 +226,9 @@ body::after {
     background: conic-gradient(from 0deg, var(--y-gold), var(--o-vivid), var(--r-strong), var(--y-burnt), var(--y-gold));
     box-shadow: var(--shadow-lg);
     animation: spin 14s linear infinite;
+    /* iOS Safari fix: force border-radius clip on composited (animated) layer */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
 }
 .avatar {
     width: 100%;
@@ -240,6 +243,9 @@ body::after {
     overflow: hidden;
     box-shadow: inset 0 -10px 30px rgba(75, 27, 18, .18), inset 0 6px 0 rgba(255,255,255,.45);
     animation: spin-reverse 14s linear infinite;
+    /* iOS Safari fix */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
 }
 .avatar-logo {
     width: 100%;
