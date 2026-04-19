@@ -13,13 +13,13 @@
     "categories": ["food", "business", "shopping"],
     "icons": [
         {
-            "src": "Assets/logocoxa.webp",
+            "src": "Assets/DONNA COXINHA LOGO COREL.svg",
             "sizes": "192x192",
             "type": "image/webp",
             "purpose": "any"
         },
         {
-            "src": "Assets/logocoxa.webp",
+            "src": "Assets/DONNA COXINHA LOGO COREL.svg",
             "sizes": "512x512",
             "type": "image/webp",
             "purpose": "any maskable"
