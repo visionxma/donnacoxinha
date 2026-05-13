@@ -3,8 +3,7 @@ Allow: /
 Disallow: /.git/
 Disallow: /.github/
 
-# Permitir explicitamente o cardápio e logo para crawlers de imagens
-Allow: /Assets/cardapio/
+# Permitir explicitamente o logo para crawlers de imagens
 Allow: /Assets/logocoxa.png
 
 Sitemap: https://donnacoxinha.com/sitemap.xml

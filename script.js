@@ -273,37 +273,3 @@ lightbox.addEventListener('touchend', (e) => {
     if (Math.abs(dx) > 50) showPhoto(dx < 0 ? 1 : -1);
 }, { passive: true });
 
-/* ============================================================
-   Modal do cardápio (PDF)
-   ============================================================ */
-const menuModal = document.getElementById('menu-modal');
-const menuOpeners = document.querySelectorAll('#open-menu, #open-menu-featured');
-
-function openMenu() {
-    menuModal.classList.add('open');
-    menuModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-}
-function closeMenu() {
-    menuModal.classList.remove('open');
-    menuModal.setAttribute('aria-hidden', 'true');
-    if (!modal.classList.contains('open') && !lightbox.classList.contains('open')) {
-        document.body.classList.remove('modal-open');
-    }
-}
-
-menuOpeners.forEach(btn => btn.addEventListener('click', openMenu));
-menuModal.querySelectorAll('[data-close-menu]').forEach(el => el.addEventListener('click', closeMenu));
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menuModal.classList.contains('open')) closeMenu();
-});
-
-// Ampliar imagem do cardápio em lightbox ao clicar
-const menuImage = document.getElementById('menu-image');
-if (menuImage) {
-    menuImage.addEventListener('click', () => {
-        photos.push({ src: menuImage.src, alt: menuImage.alt });
-        openLightbox(photos.length - 1);
-    });
-}

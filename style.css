@@ -1105,78 +1105,6 @@ body::after {
 /* Impedir scroll quando modal aberto */
 body.modal-open { overflow: hidden; }
 
-/* ===== Modal do cardápio (PDF) ===== */
-.menu-modal-content {
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    max-height: calc(100dvh - 48px);
-}
-.menu-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.menu-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--o-vivid), var(--r-strong));
-    color: var(--white);
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: .3px;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-.menu-download svg { width: 16px; height: 16px; }
-.menu-download:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-.menu-viewer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 60dvh;
-}
-.menu-pdf {
-    width: 100%;
-    flex: 1;
-    min-height: 65dvh;
-    border: none;
-    border-radius: 14px;
-    background: var(--cream);
-    box-shadow: inset 0 0 0 1px rgba(75, 27, 18, .1);
-}
-.menu-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-    box-shadow: var(--shadow-md);
-    cursor: zoom-in;
-    transition: transform .3s ease, box-shadow .3s ease;
-}
-.menu-image:hover {
-    transform: scale(1.01);
-    box-shadow: var(--shadow-lg);
-}
-.menu-fallback {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--brown);
-}
-.menu-fallback a {
-    color: var(--o-dark);
-    font-weight: 700;
-    text-decoration: underline;
-}
-
 /* ===== Responsivo ===== */
 @media (max-width: 420px) {
     .container { padding: 28px 16px 60px; }
@@ -1191,9 +1119,6 @@ body.modal-open { overflow: hidden; }
     .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .photo-modal-content { padding: 16px; border-radius: 18px; }
     .photo-modal-header h2 { font-size: 19px; }
-    .menu-download span { display: none; }
-    .menu-download { padding: 8px; }
-    .menu-pdf { min-height: 55dvh; }
     .lightbox-prev { left: 8px; }
     .lightbox-next { right: 8px; }
     .lightbox-close { top: 12px; right: 12px; }

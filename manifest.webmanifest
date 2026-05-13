@@ -36,12 +36,6 @@
     ],
     "shortcuts": [
         {
-            "name": "Cardápio",
-            "short_name": "Menu",
-            "description": "Ver o cardápio completo",
-            "url": "/?menu"
-        },
-        {
             "name": "Delivery",
             "short_name": "Pedir",
             "description": "Fazer pedido pelo Anota aí®",
